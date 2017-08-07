@@ -15,7 +15,6 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p>Current state: {result}</p>
-        {}
         <button
           type='button'
           onClick={doSomethingNow}>Do Something Now</button>
@@ -34,10 +33,7 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({
   }),
   doSomethingEventually: () => ({
     type: 'ASYNC_ACTION',
-    payload: {
-      data: 'probably correct??',
-      promise: new Promise((resolve, reject) => setTimeout(reject, 1000, 'oh no!'))
-    }
+    payload: Promise.resolve('dolor sit amet')
   })
 }, dispatch);
 
